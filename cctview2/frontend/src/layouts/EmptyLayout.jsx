@@ -1,0 +1,1 @@
+//Bare layout for full-screen video playback or similar views

@@ -1,0 +1,45 @@
+# FastAPI and web server
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+pydantic==1.10.13
+
+# PyTorch (CUDA 12.1 compatible)
+torch==2.1.0
+torchvision==0.16.0
+
+# Transformers and accelerate (Updated for Video-LLaVA support)
+transformers==4.40.0
+accelerate==0.28.0
+
+# Video processing
+opencv-python==4.8.1.78
+
+# HuggingFace Hub for model downloads
+huggingface-hub==0.19.4
+
+# Sentence embeddings
+sentence-transformers==2.2.2
+
+# YOLO
+ultralytics==8.0.220
+
+# Image processing
+Pillow==10.1.0
+opencv-python==4.8.1.78
+numpy==1.24.3
+
+# Utilities
+python-dotenv==1.0.0
+requests==2.31.0
+colorlog==6.8.0
+
+# Additional dependencies for VILA/LLaVA
+einops==0.7.0
+timm==0.9.12
+protobuf==3.20.3
+sentencepiece==0.1.99
+
+# MiDaS depth estimation dependencies
+# (MiDaS itself will be loaded via torch.hub from intel-isl/MiDaS)
+# No additional packages needed - torch.hub handles it automatically

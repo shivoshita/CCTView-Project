@@ -1,0 +1,3 @@
+"""
+Prepare images for AI
+"""

@@ -1,0 +1,1 @@
+#Check camera health every minute

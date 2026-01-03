@@ -1,0 +1,1 @@
+//Minimal wrapper for login/register pages (no sidebar/topbar)

@@ -1,0 +1,1 @@
+//WebSocket connection settings for real-time updates

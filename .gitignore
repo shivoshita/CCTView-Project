@@ -1,0 +1,66 @@
+# Environment variables
+.env
+.env.*
+*.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.venv/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+
+# Cache / temp
+.cache/
+tmp/
+temp/
+
+# Logs
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ===== Large AI / ML Models (DO NOT PUSH) =====
+NVILA-15B-local/
+models/
+vision_tower/
+llm/
+mm_projector/
+
+# Model checkpoints
+*.pt
+*.pth
+*.onnx
+*.h5
+*.ckpt
+*.safetensors
+
+# Datasets / videos
+data/
+datasets/
+videos/
+recordings/
+*.mp4
+*.avi
+*.mkv
+
+# HuggingFace / Torch cache
+.cache/
+.cache/**
+
+# Training artifacts
+trainer_state.json
+

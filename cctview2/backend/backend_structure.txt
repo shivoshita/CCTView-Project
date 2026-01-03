@@ -1,0 +1,237 @@
+.
+├── .dockerignore
+├── .env
+├── .env.example
+├── .gitignore
+├── LICENSE
+|__ celerybeat-schedule
+├── README.md
+|__MIGRATION_SUMMARY.md
+|__README_MIGRATION.md
+|__ pyproject.toml
+|__ requirements.txt
+├── alembic
+│   ├── versions
+│   └── env.py
+├── app
+│   ├── __init__.py
+│   ├── ai
+│   │   ├── __init__.py
+│   │   ├── models
+│   │   │   ├── __init__.py
+│   │   │   ├── embedding_model.py
+│   │   │   ├── model_manager.py
+│   │   │   ├── object_detector.py
+│   │   │   ├── reid_model.py
+│   │   │   └── vision_model.py
+│   │   ├── pipeline
+│   │   │   ├── __init__.py
+│   │   │   ├── anomaly_detector.py
+│   │   │   ├── deduplicator.py
+│   │   │   ├── frame_processor.py
+│   │   │   └── tracker.py
+│   │   └── utils
+│   │       ├── __init__.py
+│   │       ├── gpu_manager.py
+│   │       ├── postprocessing.py
+│   │       └── preprocessing.py
+│   ├── api
+│   │   ├── __init__.py
+│   │   ├── deps.py
+│   │   └── v1
+│   │       ├── __init__.py
+│   │       ├── endpoints
+│   │       │   ├── __init__.py
+│   │       │   ├── ai.py
+│   │       │   ├── alerts.py
+│   │       │   ├── anomalies.py
+│   │       │   ├── auth.py
+│   │       │   ├── cameras.py
+│   │       │   ├── chat.py
+|   |       |   |__dashboard.py
+│   │       │   ├── events.py
+│   │       │   ├── health.py
+|   |       |   |__migration.py
+│   │       │   ├── persons.py
+│   │       │   ├── playback.py
+│   │       │   ├── settings.py
+│   │       │   └── users.py
+│   │       ├── router.py
+│   │       └── websockets
+│   │           ├── __init__.py
+│   │           ├── alerts_ws.py
+│   │           ├── camera_status_ws.py
+|   |           |__caption_manager.py
+│   │           └── events_ws.py
+│   ├── core
+│   │   ├── __init__.py
+│   │   ├── config.py
+│   │   ├── dependencies.py
+│   │   ├── exceptions.py
+│   │   ├── logging_config.py
+│   │   ├── middleware.py
+│   │   └── security.py
+│   ├── db
+│   │   ├── __init__.py
+│   │   ├── migrations
+│   │   │   ├── 001_initial_schema.py
+│   │   │   ├── 002_add_indexes.py
+│   │   │   ├── 003_retention_policies.py
+|   |   |   |__ 004_add_time_ranges.py
+│   │   │   └── __init__.py
+│   │   ├── neo4j
+│   │   │   ├── __init__.py
+│   │   │   ├── alert_repository.py
+│   │   │   ├── anomaly_repository.py
+│   │   │   ├── client.py
+│   │   │   ├── event_repository.py
+│   │   │   ├── graph_queries.py
+│   │   │   ├── person_repository.py
+│   │   │   ├── query_repository.py
+│   │   │   └── user_repository.py
+│   │   └── redis
+│   │       ├── __init__.py
+│   │       ├── cache_manager.py
+│   │       ├── client.py
+│   │       ├── operations.py
+│   │       └── vector_index.py
+│   ├── main.py
+│   ├── models
+│   │   ├── __init__.py
+│   │   ├── alert.py
+│   │   ├── anomaly.py
+│   │   ├── auth.py
+│   │   ├── camera.py
+│   │   ├── chat.py
+│   │   ├── common.py
+│   │   ├── event.py
+│   │   ├── person.py
+│   │   └── playback.py
+│   ├── monitoring
+│   │   ├── __init__.py
+│   │   ├── health_checks.py
+│   │   ├── metrics.py
+│   │   └── tracing.py
+│   ├── notifications
+│   │   ├── __init__.py
+│   │   ├── channels
+│   │   │   ├── __init__.py
+│   │   │   ├── email_notifier.py
+│   │   │   ├── push_notifier.py
+│   │   │   ├── sms_notifier.py
+│   │   │   └── webhook_notifier.py
+│   │   ├── templates
+│   │   │   ├── __init__.py
+│   │   │   ├── email_templates.py
+│   │   │   └── push_templates.py
+│   │   └── delivery_manager.py
+│   ├── rag
+│   │   ├── __init__.py
+│   │   ├── context_builder.py
+│   │   ├── llm_integration.py
+│   │   ├── query_processor.py
+│   │   ├── response_generator.py
+│   │   ├── utils
+│   │   │   ├── __init__.py
+│   │   │   ├── location_parser.py
+│   │   │   └── temporal_parser.py
+│   │   └── vector_search.py
+│   ├── schemas
+│   │   ├── __init__.py
+│   │   ├── nodes.py
+│   │   ├── queries.py
+│   │   └── relationships.py
+│   ├── services
+│   │   ├── __init__.py
+│   │   ├── ai_service_client.py
+│   │   ├── alert_service.py
+│   │   ├── anomaly_service.py
+│   │   ├── auth_service.py
+│   │   ├── camera_service.py
+│   │   ├── chat_service.py
+|   |   |__ dashboard_service.py
+│   │   ├── event_service.py
+|   |   |__ migration_service.py
+│   │   ├── notification_service.py
+│   │   ├── person_service.py
+│   │   └── playback_service.py
+│   ├── utils
+│   │   ├── __init__.py
+│   │   ├── datetime_helpers.py
+│   │   ├── error_handlers.py
+│   │   ├── formatters.py
+│   │   ├── image_helpers.py
+│   │   └── validators.py
+│   ├── video
+│   │   ├── __init__.py
+│   │   ├── frame_extractor.py
+│   │   ├── playback_manager.py
+│   │   ├── storage_adapters
+│   │   │   ├── __init__.py
+│   │   │   ├── http_adapter.py
+│   │   │   ├── nfs_adapter.py
+│   │   │   ├── rtsp_adapter.py
+│   │   │   └── smb_adapter.py
+│   │   ├── stream_manager.py
+│   │   └── utils
+│   │       ├── __init__.py
+│   │       ├── blur_detector.py
+│   │       ├── codec_helpers.py
+│   │       └── motion_detector.py
+│   └── workers
+│       ├── __init__.py
+│       ├── celery_app.py
+│       ├── tasks
+│       │   ├── __init__.py
+│       │   ├── alert_delivery.py
+│       │   ├── batch_processing.py
+│       │   ├── camera_monitoring.py
+│       │   ├── cleanup.py
+│       │   └── frame_processing.py
+|       |   |__ migration_task.py
+│       └── utils
+│           ├── __init__.py
+│           ├── retry_logic.py
+│           └── task_helpers.py
+├── configs
+│   ├── anomaly_rules_example.yaml
+│   ├── cameras_example.yaml
+│   └── logging.yaml
+├── docker
+│   ├── Dockerfile.api
+│   ├── Dockerfile.worker
+│   └── docker-compose.yml
+├── logs
+│   ├── cctview_20251018.log
+│   └── cctview_20251019.log
+├── models
+├── scripts
+│   ├── benchmark_gpu.py
+│   ├── download_models.py
+│   ├── init_neo4j_schema.py
+│   └── test_camera_connection.py
+|   |__ test_migration.py
+|   |__ view_neo4j_data.py
+|   |__ view_redis_captions.py
+├── temp
+├── tests
+│   ├── __init__.py
+│   ├── conftest.py
+│   ├── e2e
+│   │   ├── __init__.py
+│   │   ├── test_full_pipeline.py
+│   │   └── test_rag_chatbot.py
+│   ├── integration
+│   │   ├── __init__.py
+│   │   ├── test_api_endpoints.py
+│   │   ├── test_end_to_end.py
+│   │   ├── test_neo4j_queries.py
+│   │   ├── test_redis_operations.py
+│   │   └── test_video_playback.py
+│   └── unit
+│       ├── __init__.py
+│       ├── test_ai_pipeline.py
+│       ├── test_deduplicator.py
+│       ├── test_services.py
+│       └── test_tracker.py
+└── venv

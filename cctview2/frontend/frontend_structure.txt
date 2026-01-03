@@ -1,0 +1,239 @@
+.
+├── .env
+├── .env.example
+├── .eslintrc.js
+├── .prettierrc
+├── README.md
+├── frontend_structure.txt
+├── index.html
+├── node_modules
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── public
+│   ├── assets
+│   │   ├── icons
+│   │   └── images
+│   ├── favicon.ico
+│   └── index.html
+├── src
+│   ├── App.jsx
+│   ├── config
+│   │   ├── api.config.js
+│   │   ├── constants.js
+│   │   ├── theme.config.js
+│   │   └── websocket.config.js
+│   ├── features
+│   │   ├── alerts
+│   │   │   ├── hooks
+│   │   │   │   ├── useAlerts.js
+│   │   │   │   └── useNotifications.js
+│   │   │   ├── store
+│   │   │   │   └── alertSlice.js
+│   │   │   └── utils
+│   │   │       └── channelHelpers.js
+│   │   ├── anomalies
+│   │   │   ├── hooks
+│   │   │   │   ├── useAnomalies.js
+│   │   │   │   └── useRules.js
+│   │   │   ├── store
+│   │   │   │   └── anomalySlice.js
+│   │   │   └── utils
+│   │   │       └── ruleValidator.js
+│   │   ├── auth
+│   │   │   ├── hooks
+│   │   │   │   └── useAuth.js
+│   │   │   ├── store
+│   │   │   │   └── authSlice.js
+│   │   │   └── utils
+│   │   │       └── tokenManager.js
+│   │   ├── cameras
+│   │   │   ├── hooks
+│   │   │   │   ├── useCameraHealth.js
+│   │   │   │   ├── useCameraStream.js
+│   │   │   │   └── useCameras.js
+│   │   │   ├── store
+│   │   │   │   └── cameraSlice.js
+│   │   │   └── utils
+│   │   │       ├── cameraValidation.js
+│   │   │       └── streamHelpers.js
+│   │   ├── chat
+│   │   │   ├── hooks
+│   │   │   │   ├── useChat.js
+│   │   │   │   └── useRAGQuery.js
+│   │   │   ├── store
+│   │   │   │   └── chatSlice.js
+│   │   │   └── utils
+│   │   │       └── queryParser.js
+│   │   ├── events
+│   │   │   ├── hooks
+│   │   │   │   ├── useEventSearch.js
+│   │   │   │   ├── useEvents.js
+│   │   │   │   └── useVideoPlayback.js
+│   │   │   ├── store
+│   │   │   │   └── eventSlice.js
+│   │   │   └── utils
+│   │   │       ├── timeParser.js
+│   │   │       └── videoReferenceBuilder.js
+│   │   └── personTracking
+│   │       ├── hooks
+│   │       │   ├── usePersons.js
+│   │       │   └── useTrajectory.js
+│   │       ├── store
+│   │       │   └── personSlice.js
+│   │       └── utils
+│   │           └── trajectoryCalculator.js
+│   ├── index.css
+│   ├── layouts
+│   │   ├── AuthLayout.jsx
+│   │   ├── DashboardLayout.jsx
+│   │   └── EmptyLayout.jsx
+│   ├── main.jsx
+│   ├── pages
+│   │   ├── Alerts
+│   │   │   ├── AlertConfig.jsx
+│   │   │   ├── components
+│   │   │   │   ├── AlertCard.jsx
+│   │   │   │   ├── AlertChannelToggle.jsx
+│   │   │   │   ├── DeliveryStatus.jsx
+│   │   │   │   └── EscalationRules.jsx
+│   │   │   └── index.jsx
+│   │   ├── Anomalies
+│   │   │   ├── AnomalyDetail.jsx
+│   │   │   ├── RulesEngine.jsx
+│   │   │   ├── components
+│   │   │   │   ├── AnomalyCard.jsx
+│   │   │   │   ├── AnomalyTimeline.jsx
+│   │   │   │   ├── ConfidenceSlider.jsx
+│   │   │   │   ├── RuleEditor.jsx
+│   │   │   │   └── RuleTemplates.jsx
+│   │   │   └── index.jsx
+│   │   ├── Auth
+│   │   │   ├── ForgotPassword.jsx
+│   │   │   ├── Login.jsx
+│   │   │   └── Register.jsx
+│   │   ├── Cameras
+│   │   │   ├── AddCamera.jsx
+│   │   │   ├── CameraDetail.jsx
+│   │   │   ├── components
+│   │   │   │   ├── AddCameraModal.jsx
+│   │   │   │   ├── CameraCard.jsx
+│   │   │   │   ├── CameraHealthStatus.jsx
+|   |   |   |   |__ CaptionOverlay.jsx
+│   │   │   │   ├── FullScreenCamera.jsx
+│   │   │   │   └── StoragePathConfig.jsx
+│   │   │   └── index.jsx
+│   │   ├── ChatRAG
+│   │   │   ├── components
+│   │   │   │   ├── ChatWindow.jsx
+│   │   │   │   ├── ContextWindow.jsx
+│   │   │   │   ├── MessageBubble.jsx
+│   │   │   │   ├── QuerySuggestions.jsx
+│   │   │   │   └── VideoResultCard.jsx
+│   │   │   └── index.jsx
+│   │   ├── Dashboard
+│   │   │   ├── components
+│   │   │   │   ├── AnomalyAlerts.jsx
+│   │   │   │   ├── LiveFeedGrid.jsx
+│   │   │   │   ├── RecentEventsPanel.jsx
+│   │   │   │   └── SystemHealthCard.jsx
+│   │   │   └── index.jsx
+│   │   ├── Events
+│   │   │   ├── EventDetail.jsx
+│   │   │   ├── EventSearch.jsx
+│   │   │   ├── components
+│   │   │   │   ├── EventCard.jsx
+│   │   │   │   ├── EventFilters.jsx
+│   │   │   │   ├── EventTimeline.jsx
+│   │   │   │   └── VideoPlayer.jsx
+│   │   │   └── index.jsx
+│   │   ├── PersonTracking
+│   │   │   ├── PersonDetail.jsx
+│   │   │   ├── components
+│   │   │   │   ├── AppearanceGallery.jsx
+│   │   │   │   ├── CrossCameraPath.jsx
+│   │   │   │   ├── PersonCard.jsx
+│   │   │   │   └── TrajectoryMap.jsx
+│   │   │   └── index.jsx
+│   │   └── Settings
+│   │       ├── StorageConfig.jsx
+│   │       ├── SystemSettings.jsx
+│   │       ├── UserManagement.jsx
+│   │       ├── components
+│   │       │   ├── ContextWindowSelector.jsx
+│   │       │   ├── RetentionPicker.jsx
+│   │       │   ├── StorageProtocolPicker.jsx
+│   │       │   └── UserRoleEditor.jsx
+│   │       └── index.jsx
+│   ├── routes
+│   │   ├── ProtectedRoute.jsx
+│   │   ├── RoleBasedRoute.jsx
+│   │   └── index.jsx
+│   ├── services
+│   │   ├── alert.service.js
+│   │   ├── anomaly.service.js
+│   │   ├── api.service.js
+│   │   ├── auth.service.js
+│   │   ├── camera.service.js
+│   │   ├── chat.service.js
+|   |   |__ dashboard.service.js
+│   │   ├── event.service.js
+│   │   ├── person.service.js
+│   │   └── websocket.service.js
+│   ├── shared
+│   │   ├── components
+│   │   │   ├── data
+│   │   │   │   ├── DataTable.jsx
+│   │   │   │   ├── EmptyState.jsx
+│   │   │   │   ├── Pagination.jsx
+│   │   │   │   └── SearchBar.jsx
+│   │   │   ├── feedback
+│   │   │   │   ├── Alert.jsx
+│   │   │   │   ├── ErrorBoundary.jsx
+│   │   │   │   └── Toast.jsx
+│   │   │   ├── navigation
+│   │   │   │   ├── Breadcrumbs.jsx
+│   │   │   │   ├── Sidebar.jsx
+│   │   │   │   └── Topbar.jsx
+│   │   │   ├── specialized
+│   │   │   │   ├── CameraSelector.jsx
+│   │   │   │   ├── GraphVisualizer.jsx
+│   │   │   │   ├── LiveStreamViewer.jsx
+│   │   │   │   ├── TimestampPicker.jsx
+│   │   │   │   └── VideoPlayer.jsx
+│   │   │   └── ui
+│   │   │       ├── Alert.jsx
+│   │   │       ├── Badge.jsx
+│   │   │       ├── Button.jsx
+│   │   │       ├── Card.jsx
+|   |   |       |__ ConfirmDialogBox.jsx
+│   │   │       ├── Input.jsx
+│   │   │       ├── Loader.jsx
+│   │   │       ├── Modal.jsx
+│   │   │       ├── Select.jsx
+│   │   │       └── Tooltip.jsx
+│   │   ├── hooks
+|   |   |   |__ useCameraCaptions.js
+│   │   │   ├── useDebounce.js
+│   │   │   ├── useIntersectionObserver.js
+│   │   │   ├── useLocalStorage.js
+│   │   │   ├── useMediaQuery.js
+│   │   │   └── useWebSocket.js
+│   │   └── utils
+│   │       ├── constants.js
+│   │       ├── errorHandlers.js
+│   │       ├── formatters.js
+│   │       └── validators.js
+│   ├── store
+│   │   ├── index.js
+│   │   └── rootReducer.js
+│   ├── styles
+│   │   ├── animations.css
+│   │   └── index.css
+│   └── types
+│       ├── anomaly.types.ts
+│       ├── api.types.ts
+│       ├── camera.types.ts
+│       └── event.types.ts
+├── tailwind.config.js
+└── vite.config.js

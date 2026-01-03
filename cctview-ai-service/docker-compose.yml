@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  ai-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cctview-ai-service
+    restart: unless-stopped
+    
+    ports:
+      - "8888:8888"
+    
+    volumes:
+      - ./models:/app/models  # Persist downloaded models
+      - ./logs:/app/logs      # Persist logs
+    
+    environment:
+      - CUDA_VISIBLE_DEVICES=0  # GPU0
+      - PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:512
+      - HF_HOME=/app/models/huggingface
+      - TRANSFORMERS_CACHE=/app/models/transformers
+    
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8888/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 120s  
+    
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    
+    shm_size: '4gb'

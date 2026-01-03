@@ -1,0 +1,32 @@
+Changes made on 05-11-2025
+1. cctview2/backend/app/api/v1/endpoints/anomalies.py
+2. cctview2/backend/app/api/v1/endpoints/anomaly_notifications.py [NEW]
+3. cctview2/frontend/src/pages/Anomalies/tabs/ConfigureTab.jsx [NEW]
+4. cctview2/frontend/src/pages/Anomalies/tabs/HistoryTab.jsx [NEW]
+5. cctview2/frontend/src/pages/Anomalies/tabs/TriggersTab.jsx [NEW]
+6. cctview2/frontend/src/pages/Anomalies/index.jsx
+7. cctview2/frontend/src/pages/Anomalies/AnomalyDetail.jsx
+8. cctview2/frontend/src/pages/Anomalies/RulesEngine.jsx
+9. cctview2/frontend/src/services/anomaly.service.js
+10. cctview2/frontend/src/App.jsx
+11. cctview2/backend/app/api/v1/websockets/alerts_ws.py [CURSOR NEW]
+12. cctview2/frontend/src/services/websocket.service.js [CURSOR NEW]
+
+13-11-2025
+1. cctview2/frontend/src/pages/PersonTracking/components/RegisterPersonModal.jsx [NEW]
+2. cctview2/backend/app/api/v1/endpoints/persons.py
+3. cctview2/frontend/src/pages/PersonTracking/index.jsx
+4. cctview2/frontend/src/services/person.service.js
+5. cctview2/frontend/src/pages/PersonTracking/components/PersonCard.jsx
+6. cctview2/frontend/src/App.jsx
+7. cctview2/frontend/src/shared/components/ui/ConfirmDialogBox.jsx [NEW]
+8. cctview2/frontend/src/shared/components/ui/Input.jsx
+
+14-11-2025
+1. cctview2/backend/app/api/v1/endpoints/cameras.py
+2. cctview2/frontend/src/pages/Cameras/components/FullScreenCamera.jsx
+
+21-11-2025
+1. cctview2/backend/app/api/v1/endpoints/cameras.py
+2. cctview2/frontend/src/services/camera.service.js
+3. cctview2/frontend/src/pages/Cameras/components/FullScreenCamera.jsx
